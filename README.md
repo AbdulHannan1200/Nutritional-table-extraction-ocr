@@ -22,25 +22,31 @@ This project uses the OCR technique to detect and extract text from images of nu
 # Installation
 
 ## 1. Clone the repository:
+
 - git clone https://github.com/AbdulHannan1200/Nutritional-table-extraction-ocr.git
 - cd Nutritional-table-extraction-ocr
 
 ## 2. Create & activate a virtual environment:
+
 conda create --name nutrition python=3.7
 conda activate nutrition
 
 ## 3. Install the required packages:
+
 pip install -r requirements.txt
 
 # Usage
+
 ## Running the FastAPI server
 
 ### Start the FastAPI server:
-uvicorn app:app --reload
+
+uvicorn app.app:app --reload
 
 The API will be accessible at <b>http://0.0.0.0:8003/</b>.
 
 ### API Endpoints
+
 The API document will be accessible at <b>http://0.0.0.0:8003/docs/</b>.
 
 # Contributing
