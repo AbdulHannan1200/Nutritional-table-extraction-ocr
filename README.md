@@ -1,33 +1,57 @@
-# FastAPI Modular Boilerplate
+# Nutrition Table OCR
 
-FastAPI is a modern, high-performance Python web framework that allows developers to build robust APIs for web services and RESTful APIs in Python quickly and efficiently.
+This project uses the OCR technique to detect and extract text from images of nutrition tables. It includes functionality to correct image tilt and more pre-processing steps, merge horizontally aligned text boxes into single rows, and integrate with FastAPI for a seamless API experience.
 
-#Structure Details
+## Features
 
-1. /app: this is the main folder for manage entire app's code
+- Detect and extract text from images using PaddleOCR.
+- Correct image tilt to ensure tabular data is aligned along the x-axis and y-axis.
+- Merge text boxes that are aligned horizontally.
+- Provide text and confidence scores for each merged box.
+- Integrated with FastAPI for easy API access.
 
-   a. app.py: this file contains all API functions and endpoints
+## Requirements
 
-   b. /Modules: this is the main directory of codes of all modules of app
+- Python 3.7+
+- PaddleOCR
+- FastAPI
+- OpenCV
+- Pillow
+- Numpy
 
-   i) Module A: first module
+# Installation
 
-   ii) Module B: second module
+## 1. Clone the repository:
+- git clone https://github.com/AbdulHannan1200/Nutritional-table-extraction-ocr.git
+- cd Nutritional-table-extraction-ocr
 
-   c. /Storage: this is the directory to manage storage bucket related codes
+## 2. Create & activate a virtual environment:
+conda create --name nutrition python=3.7
+conda activate nutrition
 
-   d. /Database: this is the directory to manage database connection & CRUDs functions
-
-2. main.py: this is the main file to run the server via
-
-```bash
-python main.py
-```
-
-3. requirements.text: this holds app's dependencies and is installed via
-
-```bash
+## 3. Install the required packages:
 pip install -r requirements.txt
-```
 
-4. .gitignore: this file holds names & extensions to avoid unnecessary or heavy files to be pushed on repo
+# Usage
+## Running the FastAPI server
+
+### Start the FastAPI server:
+uvicorn app:app --reload
+
+The API will be accessible at <b>http://0.0.0.0:8003/</b>.
+
+### API Endpoints
+The API document will be accessible at <b>http://0.0.0.0:8003/docs/</b>.
+
+# Contributing
+
+- Fork the repository.
+- Create a new branch: git checkout -b my-new-feature.
+- Commit your changes: git commit -am 'Add some feature'.
+- Push to the branch: git push origin my-new-feature.
+- Submit a pull request.
+
+# Acknowledgments
+
+- PaddleOCR -> https://github.com/PaddlePaddle/PaddleOCR
+- FastAPI -> https://github.com/tiangolo/fastapi
